@@ -40,6 +40,10 @@ function App() {
       alert('ERRO! SUA MSG Ñ FOI ENVIADA!')
       console.log(err)
     });
+
+    setInsta('')
+    setMessage('')
+    setName('')
     
   }
 
