@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 import emailjs from '@emailjs/browser'
+import ReactWhatsapp from 'react-whatsapp'
+import Banner from './components/Banner';
+import { BsWhatsapp } from 'react-icons/bs'
+import Pix from './components/Pix';
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [name, setName] = useState('')
@@ -24,66 +32,71 @@ function App() {
     mensagem: message
   }
 
+  const msgZap = 'Nome: ' + name + '\n' + 'Insta: ' + insta + '\n' + 'Mensagem: ' + message
+
+
   function enviarPergunta(e) {
     e.preventDefault();
 
-    if(name==='' || message==='') {
+    if (name === '' || message === '') {
       alert('Preencha os campos necessários')
       return;
     }
+  }
 
-    emailjs.send('service_tmd1fml', 'template_6i1bbd5', parametrosPergunta, 'docTnjZjCVycyJCUg')
-    .then((result) => {
-      alert("MENSAGEM ENVIADA! Obrigado :)")
-      console.log(result.status, result.text)
-    },(err)=>{
-      alert('ERRO! SUA MSG Ñ FOI ENVIADA!')
-      console.log(err)
-    });
-
-    setInsta('')
-    setMessage('')
-    setName('')
-    
+  function copiarChavePix(e) {
+    navigator.clipboard.writeText('papoparalello@gmail.com')
+    console.log(msgZap)
+    toast('Chave Copiada!')
   }
 
   return (
-    <div className="container">
-      <h1 className="title">Envie sua pergunta para o papo!</h1>
+    <>
+      <div className="container">
+        <Banner />
+        <h1 className="title">Envie sua pergunta para o papo!</h1>
 
-      <form className="form" onSubmit={enviarPergunta}>
-        <input
-          className="input"
-          type="text"
-          placeholder="Digite seu nome"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        />
-        <input
-          className="input"
-          type="text"
-          placeholder="Digite seu insta. Ex: @papoparalello..."
-          onChange={(e) => setInsta(e.target.value)}
-          value={insta}
-        />
-        {/* <input
-          className="input"
-          type="text"
-          placeholder="Digite seu email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        /> */}
+        <form className="form" onSubmit={enviarPergunta}>
+          <input
+            className="input"
+            type="text"
+            placeholder="Digite seu nome"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+          <input
+            className="input"
+            type="text"
+            placeholder="Digite seu insta. Ex: @papoparalello..."
+            onChange={(e) => setInsta(e.target.value)}
+            value={insta}
+          />
 
-        <textarea
-          className="textarea"
-          placeholder="Digite sua mensagem..."
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-        />
+          <textarea
+            className="textarea"
+            placeholder="Digite sua mensagem..."
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+          />
 
-        <input className="button" type="submit" value="Enviar" />
-      </form>
-    </div>
+          <Pix
+            copiar={copiarChavePix}
+            toast={<ToastContainer />}
+          />
+          <span className='text'>Pergunta 5$</span>
+          <span className='text'>Divulgação 10$</span>
+
+          <ReactWhatsapp className='button'
+            number='+5511970591232'
+            message={msgZap}
+          >Enviar   <BsWhatsapp color='#FFF' size='0.8em' /></ReactWhatsapp>
+
+          <span className='text'>**Favor enviar comprovante Pix</span>
+
+
+        </form>
+      </div>
+    </>
   );
 }
 
