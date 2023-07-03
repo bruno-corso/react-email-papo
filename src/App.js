@@ -96,7 +96,7 @@ function App() {
           <span className='text'>Divulgação 10$</span>
 
           <ReactWhatsapp className='button'
-            number='+5511970591232'
+            number='+5511952381574'
             message={msgZap}
           >Enviar   <BsWhatsapp color='#FFF' size='0.8em' /></ReactWhatsapp>
 
