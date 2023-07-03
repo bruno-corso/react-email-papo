@@ -18,7 +18,7 @@ O objetivo é fornecer uma plataforma simples para os fãs do podcast interagire
 
 ## Como acessar ▶️
 
-Foi feito o Deploy na Vercel. Você pode conferir o site no seguinte link: [Deploy](https://msg-papo-paralello.vercel.app/)
+Foi feito o Deploy na Vercel. Você pode conferir o site no seguinte link: [Mensagem Papo](https://msg-papo-paralello.vercel.app/)
 
 ## Contribuição 🤝
 
