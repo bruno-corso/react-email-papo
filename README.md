@@ -1,6 +1,6 @@
 # Envie Mensagens para um Podcast via WhatsApp! 📱
 
-O objetivo é fornecer uma plataforma simples para os fãs do podcast interagirem com os apresentadores, compartilhando suas informações e mensagens. Este projeto é um site básico desenvolvido em React ⚛️ para permitir que os usuários escrevam uma mensagem para enviar instantaneamente a um podcast via WhatsApp.
+O objetivo é fornecer uma plataforma simples para os fãs do podcast interagirem com os apresentadores, compartilhando suas informações e mensagens. Este projeto é um site básico desenvolvido em React ⚛️ para permitir que os usuários escrevam uma mensagem para enviar instantaneamente a um podcast via WhatsApp. Essa aplicação foi inspirado no projeto do [DevFraga](https://github.com/devfraga/react-email), mas lá ele utiliza o e-mial como via de comunicação e neste eu implementei o WhatsApp.
 
 ## Funcionalidades Principais 🚀
 
