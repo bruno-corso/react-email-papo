@@ -50,6 +50,15 @@ function App() {
     toast('Chave Copiada!')
   }
 
+  // const QRCode = require('qrcode');
+
+  // const link = 'https://msg-papo-paralello.vercel.app/'; // Insira o link que deseja transformar em QR Code
+
+  // QRCode.toDataURL(link, (err, url) => {
+  //   if (err) throw err;
+  //   console.log(url); // Exibe o link do QR Code em formato de imagem (data URL)
+  // });
+
   return (
     <>
       <div className="container">

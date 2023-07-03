@@ -6,3 +6,11 @@
 .pix p {
     font-weight: bold;
 }
+
+.click {
+    margin-left: 0.5rem;
+}
+
+.click:hover {
+    cursor: pointer;
+}

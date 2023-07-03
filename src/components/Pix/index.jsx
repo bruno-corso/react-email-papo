@@ -6,7 +6,7 @@ const Pix = ({copiar, toast}) => {
         <div className="pix">
             <p>Chave Pix:</p>
             <span>papoparalelo@gmail.com </span>
-            <BiSolidCopyAlt onClick={copiar} color='yellow'/>
+            <BiSolidCopyAlt className='click' onClick={copiar} color='#DEFF1C' size='1.5rem'/>
             {toast}
         </div>
      );
